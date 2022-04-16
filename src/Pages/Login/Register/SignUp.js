@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocailLogin from "../SocialLogin/SocialLogin";
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -30,6 +31,7 @@ const SignUp = () => {
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
+            required
             ref={nameRef}
             type="text"
             placeholder="Enter Your Name"
@@ -37,7 +39,12 @@ const SignUp = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+          <Form.Control
+            required
+            ref={emailRef}
+            type="email"
+            placeholder="Enter email"
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -58,6 +65,7 @@ const SignUp = () => {
           Please Login
         </Link>{" "}
       </p>
+      <SocailLogin />
     </div>
   );
 };
