@@ -8,7 +8,7 @@ import "./SignUp.css";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -23,6 +23,14 @@ const SignUp = () => {
   };
   if (user) {
     navigate("/home");
+  }
+  let errorElememt;
+  if (error) {
+    errorElememt = (
+      <div>
+        <p className="text-danger">Error{error.message}</p>
+      </div>
+    );
   }
   return (
     <div className="w-50 mx-auto mt-5">
@@ -65,6 +73,7 @@ const SignUp = () => {
           Please Login
         </Link>{" "}
       </p>
+      {errorElememt}
       <SocailLogin />
     </div>
   );
