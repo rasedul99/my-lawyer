@@ -6,7 +6,10 @@ import Service from "../Service/Service";
 import "./Services.css";
 const Services = () => {
   return (
-    <div id="services" className="d-flex justify-content-between">
+    <div
+      id="services"
+      className="d-flex justify-content-between  flex-wrap"
+    >
       <Service
         title="Buisness And Contracts"
         price="500$"

@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container ">
       <Banner />
       <h3  className="text-center mt-5 mb-3">
         Services

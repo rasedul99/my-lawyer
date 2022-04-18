@@ -10,15 +10,17 @@ const Service = ({ img, price, title, desc }) => {
     navigate("/checkout");
   };
   return (
-    <div className="service">
+    
+       <div className="service mt-3">
       <img src={img} alt="" />
       <div className="info px-2 pt-2">
         <h4>{title}</h4>
         <p>{desc}</p>
         <p>Price: {price}</p>
-        <Button onClick={handleCheckout}>CLick here</Button>
+        <Button className="service-btn" onClick={handleCheckout}>CLick here</Button>
       </div>
     </div>
+   
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "../src/App.css";
+import "./App.css";
 import Header from "./components/Header/Header";
 import RequiredAuth from "./components/RequiredAuth";
 import About from "./Pages/About/About";
@@ -14,25 +14,28 @@ import NotFound from "./Pages/NotFound/NotFound";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/checkout"
-          element={
-            <RequiredAuth>
-              <CheckOut />
-            </RequiredAuth>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <div className="">
+      <div className="app-header">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/checkout"
+            element={
+              <RequiredAuth>
+                <CheckOut />
+              </RequiredAuth>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+
       <Footer />
     </div>
   );
