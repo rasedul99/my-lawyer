@@ -14,8 +14,8 @@ import NotFound from "./Pages/NotFound/NotFound";
 
 const App = () => {
   return (
-    <div className="">
-      <div className="app-header">
+    <div className="app">
+      
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -34,8 +34,6 @@ const App = () => {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </div>
-
       <Footer />
     </div>
   );
